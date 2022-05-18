@@ -62,18 +62,35 @@
 // another way to validate input fields
 
     
-    document.getElementById("btn").onclick=function(){
-        var fname =document.getElementById("field1").value;
+//     document.getElementById("btn").onclick=function(){
+//         var fname =document.getElementById("field1").value;
    
-//    console.log(fname);
+// //    console.log(fname);
 
     
-    if (fname.length == 0) {  
-        alert("Name is required");  
-        fname.focus();  
-        // return false;  
-}
-    }
+//     if (fname.length == 0) {  
+//         alert("Name is required");  
+//         fname.focus();  
+//         // return false;  
+// }
+//     }
+ 
+    document.getElementById("btn").onclick=function(){
 
+     console.log("hello");
+         let user_value = document.getElementById("login_name").value;
+         let pass_value = document.getElementById("login_password").value;
+
+         let getLocalStorageUsernameValue= localStorage.getItem("username");
+         
+         let getLocalStoragePasswordValue= localStorage.getItem("password");
+
+         if(user_value===getLocalStorageUsernameValue && pass_value===getLocalStoragePasswordValue){
+              location.href="portfolio.html"
+         }
+         else{
+              alert("wrong details");
+         }
+    }
 
     
